@@ -1,0 +1,116 @@
+{
+    "totalCustomers": 20,
+    "activeCustomers": 14,
+    "inactiveCustomers": 6,
+    "contactsLogIn": 4,
+    "customers": [
+        {
+            "name": "Elon Musk",
+            "country": "United State",
+            "mobile": "(207) 444-2901",
+            "email": "elon@gmail.com",
+            "status": true,
+            "company": "Starlink",
+            "avatar": "https://i.pravatar.cc/150?img=1"
+        },
+        {
+            "name": "Tony Stark",
+            "country": "Australia",
+            "mobile": "(207) 234-3214",
+            "email": "tony@gmail.com",
+            "status": false,
+            "company": "Marvel",
+            "avatar": "https://i.pravatar.cc/150?img=2"
+        },
+        {
+            "name": "Henry Cavil",
+            "country": "England",
+            "mobile": "44-0434-234",
+            "email": "henry@gmail.com",
+            "status": true,
+            "company": "BMW",
+            "avatar": "https://i.pravatar.cc/150?img=3"
+        },
+        {
+            "name": "Mike Banner",
+            "country": "Canada",
+            "mobile": "(223) 323-7743",
+            "email": "mike@gmail.com",
+            "status": true,
+            "company": "MBM",
+            "avatar": "https://i.pravatar.cc/150?img=4"
+        },
+        {
+            "name": "Tom Camel",
+            "country": "French",
+            "mobile": "11-2093-2342",
+            "email": "tom@gmail.com",
+            "status": false,
+            "company": "KFC",
+            "avatar": "https://i.pravatar.cc/150?img=5"
+        },
+        {
+            "name": "Raj Patel",
+            "country": "India",
+            "mobile": "(234) 11-23333",
+            "email": "raj@gmail.com",
+            "status": true,
+            "company": "TATA",
+            "avatar": "https://i.pravatar.cc/150?img=6"
+        },
+        {
+            "name": "James Brown",
+            "country": "Brazil",
+            "mobile": "11-3864-2424",
+            "email": "brown@gmail.com",
+            "status": true,
+            "company": "Saltbox",
+            "avatar": "https://i.pravatar.cc/150?img=7"
+        },
+        {
+            "name": "Wei Chen",
+            "country": "Japan",
+            "mobile": "(001) 221-2901",
+            "email": "wei@gmail.com",
+            "status": false,
+            "company": "TOYOTA",
+            "avatar": "https://i.pravatar.cc/150?img=8"
+        },
+        {
+            "name": "David Smith",
+            "country": "Jamaica",
+            "mobile": "(0223) 231-2901",
+            "email": "smith@gmail.com",
+            "status": true,
+            "company": "Clorio",
+            "avatar": "https://i.pravatar.cc/150?img=9"
+        },
+        {
+            "name": "Miya Chen",
+            "country": "China",
+            "mobile": "(0322) 221-9922",
+            "email": "chen@gmail.com",
+            "status": false,
+            "company": "TikTok",
+            "avatar": "https://i.pravatar.cc/150?img=10"
+        },
+        {
+            "name": "David Warner",
+            "country": "Australia",
+            "mobile": "22-2332-3323",
+            "email": "david@gmail.com",
+            "status": true,
+            "company": "Dribbble",
+            "avatar": "https://i.pravatar.cc/150?img=11"
+        },
+        {
+            "name": "Mikel Jordan",
+            "country": "Germany",
+            "mobile": "33-233-23231",
+            "email": "mikel@gmail.com",
+            "status": false,
+            "company": "Behance",
+            "avatar": "https://i.pravatar.cc/150?img=12"
+        }
+    ]
+}
