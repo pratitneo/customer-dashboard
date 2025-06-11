@@ -1,0 +1,11 @@
+.cust-dash {
+  &__head {
+    font-weight: 600;
+    text-transform: capitalize;
+    padding: 20px 0;
+
+    @media screen and (min-width: 1024px) {
+      font-size: 24px;
+    }
+  }
+}

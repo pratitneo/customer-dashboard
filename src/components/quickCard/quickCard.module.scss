@@ -1,0 +1,44 @@
+@use '../../styles/partials/variables' as *;
+
+.cust-dash {
+    &__quickCard {
+        display: flex;
+        align-items: center;
+        gap: 0 10px;
+        flex: 1;
+        padding: 10px 8px;
+        border-radius: $radius-primary;
+        border: 1px solid $border-primary;
+        background: $white;
+        box-shadow: $shadow-primary;
+
+        @media screen and (min-width: 1024px) {
+            padding: 10px 20px;
+        }
+    }
+
+    &__icon {
+        font-size: 20px;
+        color: $blue-primary;
+    }
+
+    &__info-head {
+        font-size: 11px;
+        margin-bottom: 5px;
+        text-transform: capitalize;
+        color: $grey-primary;
+
+        @media screen and (min-width: 1024px) {
+            font-size: 14px;
+        }
+    }
+
+    &__info-num {
+        font-size: 14px;
+        font-weight: 600;
+
+        @media screen and (min-width: 1024px) {
+            font-size: 18px;
+        }
+    }
+}

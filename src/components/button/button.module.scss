@@ -1,0 +1,48 @@
+@use '../../styles/partials/variables' as *;
+
+.cust-dash {
+    &__button {
+        &-text {
+            font-size: 12px;
+            text-transform: capitalize;
+
+            @media screen and (min-width: 1024px) {
+                font-size: 16px;
+            }
+        }
+
+        &-header {
+            width: 100%;
+            max-width: max-content;
+            height: 35px;
+            border-radius: $radius-primary;
+            display: flex;
+            align-items: center;
+            gap: 0 7px;
+            padding: 0 10px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: $shadow-primary;
+
+            @media screen and (min-width: 1024px) {
+                padding: 0 20px;
+                height: 40px;
+            }
+        }
+
+        &--blue {
+            background: $blue-primary;
+            color: $white;
+
+            &:hover {
+                background: $blue-hover;
+            }
+        }
+    }
+
+    &__icon {
+        width: 16px;
+        height: 16px;
+
+    }
+}

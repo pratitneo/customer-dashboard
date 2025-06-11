@@ -1,0 +1,57 @@
+@use './variables' as *;
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.cust-dash {
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  &__container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  &__navbar {
+    padding: 10px 0;
+    background: $bg-primary;
+    border-bottom: 1px solid $border-primary;
+  }
+
+  &__main {
+    flex: 1;
+    background: $bg-primary;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__quickCards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 30px 0;
+    max-height: 500px;
+    overflow: hidden auto;
+
+    @media screen and (min-width: 1024px) {
+      max-height: 600px;
+    }
+  }
+}
