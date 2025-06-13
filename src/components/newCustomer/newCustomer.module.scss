@@ -1,0 +1,21 @@
+@use '../../styles/partials/variables' as *;
+
+.cust-dash {
+    &__modal {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 20px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        border-radius: $radius-primary;
+        background-color: $white;
+    }
+
+    &__newCustHead {
+        font-size: 18px;
+        text-transform: capitalize;
+        text-decoration: underline dotted $grey-primary 1px;
+    }
+}

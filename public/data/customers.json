@@ -1,8 +1,4 @@
 {
-    "totalCustomers": 20,
-    "activeCustomers": 14,
-    "inactiveCustomers": 6,
-    "contactsLogIn": 4,
     "customers": [
         {
             "name": "Elon Musk",

@@ -13,6 +13,7 @@ export type ButtonType = {
     isTrailingIcon?: any
     location: string
     color: string
+    handleNewCustomer: (event: any) => void
 }
 export type QuickCardType = {
     iconName: any
@@ -38,4 +39,42 @@ export type CustomersDataType = {
 export type CustomerCardType = {
     customersData: CustomersDataType | null
     updateStatus: (name: any, index: number) => void
+    getDeleteFn: (customer: FormDataType, index: number) => void
 }
+export type ThemeType = {
+    theme: 'light' | 'dark'
+}
+export type ThemeContextType = {
+    theme: ThemeType,
+    toggleTheme: () => void
+}
+export type OverlayType = {
+    getModalCloseFn: () => void
+    children?: React.ReactNode
+}
+export type NewCustInpType = {
+    label?: string
+    inputType?: string
+    nameType?: string
+    inputPlaceHolder?: string
+    inputErr?: string
+    getInputValidation?: (inputEvent: any) => void
+}
+export type ErrorsType = {
+    name: string
+    country: string
+    mobile: string
+    email: string
+    company: string
+}
+export type FormDataType = {
+    name: string
+    country: string
+    mobile: string
+    email: string
+    company: string
+    status: boolean
+}
+export type NewCustomerType = {
+    sendNewCustomer: (customer: ErrorsType) => void
+} 

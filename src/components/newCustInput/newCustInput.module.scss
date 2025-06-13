@@ -1,0 +1,31 @@
+@use '../../styles/partials/variables' as *;
+
+.cust-dash {
+    &__custLabel {
+        font-weight: 600;
+        font-size: 12px;
+        letter-spacing: 1px;
+        color: $grey-primary;
+        text-transform: capitalize;
+    }
+
+    &__custInp {
+        width: 100%;
+        height: 35px;
+        margin-top: 5px;
+        padding: 0 10px;
+        border-radius: $radius-primary;
+        border: 1px solid $border-primary;
+
+        &:focus-visible {
+            outline: none;
+        }
+    }
+
+    &__inpErr {
+        font-size: 11px;
+        letter-spacing: 1px;
+        margin-top: 5px;
+        color: $error;
+    }
+}

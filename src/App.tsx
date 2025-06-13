@@ -5,34 +5,45 @@ import Button from "./components/button/button";
 import { CiSquarePlus } from "react-icons/ci";
 import { useEffect, useState } from "react";
 import QuickCard from "./components/quickCard/quickCard";
-import type { CustomersDataType } from "./types/types";
+import type { CustomersDataType, ErrorsType, FormDataType } from "./types/types";
 import { FaUsers } from "react-icons/fa";
 import { MdBlock, MdOutlineNotificationsActive } from "react-icons/md";
 import CustomerCard from "./components/customerCard/customerCard";
+import Overlay from "./components/overlay/overlay";
+import NewCustomer from "./components/newCustomer/newCustomer";
+
 function App() {
   const [customers, setCustomers] = useState<CustomersDataType | null>(null)
   const [filteredCustomers, setFilteredCustomers] = useState<CustomersDataType | null>(null)
   const [_loading, setLoading] = useState(true)
   const [_error, setError] = useState<null | string>(null)
+  const [modal, setModal] = useState(false)
+  console.log(filteredCustomers, 'filteredCustomers')
 
   useEffect(() => {
-    const fetchCustomers = async () => {
-      try {
-        const response = await fetch(`./data/customers.json`)
-        if (!response.ok) {
-          throw new Error("Failed to fetch customers")
-        }
-        const customersData = await response.json()
-        setCustomers(customersData)
-      }
-      catch (err: any) {
-        setError(err.message)
-      }
-      finally {
-        setLoading(false)
-      }
+    const getLocalData = localStorage.getItem('customers')
+    if (getLocalData) {
+      setCustomers(JSON.parse(getLocalData))
     }
-    fetchCustomers()
+    else {
+      const fetchCustomers = async () => {
+        try {
+          const response = await fetch(`./data/customers.json`)
+          if (!response.ok) {
+            throw new Error("Failed to fetch customers")
+          }
+          const customersData = await response.json()
+          setCustomers(customersData)
+        }
+        catch (err: any) {
+          setError(err.message)
+        }
+        finally {
+          setLoading(false)
+        }
+      }
+      fetchCustomers()
+    }
   }, [])
 
   useEffect(() => {
@@ -40,6 +51,12 @@ function App() {
       setFilteredCustomers(customers);
     }
   }, [customers]);
+
+  useEffect(() => {
+    if (filteredCustomers?.customers && filteredCustomers.customers.length > 0) {
+      localStorage.setItem('customers', JSON.stringify(filteredCustomers));
+    }
+  }, [filteredCustomers]);
 
   const filterCustomers = (value: string) => {
     if (value) {
@@ -76,6 +93,23 @@ function App() {
     })
   }
 
+  const handleModalClose = () => {
+    setModal(false)
+  }
+  const pushNewCustomer = (customer: ErrorsType) => {
+    setCustomers((prev: any) => ({ ...prev, customers: [...prev?.customers || [], customer] }));
+    setModal(false)
+  }
+  const handleCustomerDeletion = (_customer: FormDataType, index: number) => {
+    setCustomers((prev: any) => {
+      if (!prev?.customers) return prev;
+      return {
+        ...prev,
+        customers: prev.customers.filter((_: any, i: number) => i !== index),
+      };
+    });
+  };
+
   const totalCustomers = filteredCustomers?.customers?.length
   const activeCustomers = filteredCustomers?.customers?.filter((customer) => customer?.status)?.length
   const inActiveCustomers = filteredCustomers?.customers?.filter((customer) => !customer?.status)?.length
@@ -103,6 +137,7 @@ function App() {
               isLeadingIcon={<CiSquarePlus />}
               location="header"
               color="blue"
+              handleNewCustomer={() => setModal(true)}
             />
           </div>
           <div className="cust-dash__quickCards">
@@ -112,9 +147,14 @@ function App() {
             {/* <QuickCard iconName={<CiLogin />} head="contacts logged in" total={customers?.contactsLogIn} /> */}
           </div>
           <div className='cust-dash__cards'>
-            <CustomerCard customersData={filteredCustomers} updateStatus={changeStatus} />
+            <CustomerCard customersData={filteredCustomers} updateStatus={changeStatus} getDeleteFn={handleCustomerDeletion} />
           </div>
         </div>
+        {modal ? (
+          <Overlay getModalCloseFn={handleModalClose}>
+            <NewCustomer sendNewCustomer={pushNewCustomer} />
+          </Overlay>
+        ) : ''}
       </div>
     </div>
   );

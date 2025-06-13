@@ -1,12 +1,12 @@
 import custCardCss from './customerCard.module.scss'
-import { PiDotsThreeVertical } from 'react-icons/pi'
 import type { CustomerCardType } from '../../types/types'
+import { MdDeleteOutline } from 'react-icons/md'
 
-const CustomerCard = ({ customersData, updateStatus }: CustomerCardType) => {
+const CustomerCard = ({ customersData, updateStatus, getDeleteFn }: CustomerCardType) => {
     return (
         customersData?.customers?.map((customer: any, index: number) => {
             return (
-                <div className={`${custCardCss['cust-dash__card']}`}>
+                <div className={`${custCardCss['cust-dash__card']}`} key={index}>
                     {/* name & options */}
                     <div className={`${custCardCss['cust-dash__nameOpts']}`}>
                         {/* profile */}
@@ -25,8 +25,8 @@ const CustomerCard = ({ customersData, updateStatus }: CustomerCardType) => {
                             </div>
                         </div>
                         {/* button */}
-                        <div className={`${custCardCss['cust-dash__userOpts']}`}>
-                            <PiDotsThreeVertical />
+                        <div className={`${custCardCss['cust-dash__userOpts']} `} onClick={() => getDeleteFn(customer, index)}>
+                            <MdDeleteOutline />
                         </div>
                     </div>
                     <div className={`${custCardCss['cust-dash__num']}`}>{customer?.mobile}</div>
