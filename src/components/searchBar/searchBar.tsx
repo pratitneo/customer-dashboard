@@ -9,6 +9,7 @@ const Searchbar = ({ inputType, inputname, inputPlaceHolder, searchFn }: SearchB
         type={inputType}
         name={inputname}
         placeholder={inputPlaceHolder}
+        autoComplete='off'
         className={`${searchCss['cust-dash__search-input']}`}
         onChange={(e) => searchFn(e.currentTarget.value)}
       />
