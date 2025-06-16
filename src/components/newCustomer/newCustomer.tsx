@@ -83,7 +83,7 @@ const NewCustomer = ({ sendNewCustomer }: NewCustomerType) => {
             <NewCustInput label='full name' inputType='text' nameType='name' inputPlaceHolder='eg: rahul sharma' getInputValidation={handleInputValue} inputErr={errors?.name} />
             <NewCustInput label='country' inputType='text' nameType='country' inputPlaceHolder='eg: india' getInputValidation={handleInputValue} inputErr={errors?.country} />
             <NewCustInput label='contact number' inputType='number' nameType='mobile' inputPlaceHolder='eg: 9827483833' getInputValidation={handleInputValue} inputErr={errors?.mobile} />
-            <NewCustInput label='email' inputType='text' nameType='email' inputPlaceHolder='eg: rahulsharma@gmail.com' getInputValidation={handleInputValue} inputErr={errors?.email} />
+            <NewCustInput label='email' inputType='email' nameType='email' inputPlaceHolder='eg: rahulsharma@gmail.com' getInputValidation={handleInputValue} inputErr={errors?.email} />
             <NewCustInput label='company name' inputType='text' nameType='company' inputPlaceHolder='eg: reliance' getInputValidation={handleInputValue} inputErr={errors?.company} />
             <FileSelect label='select a photo for your profile card' nameType='avatar' customcls='file-select' getInputValidation={handleInputValue} inputErr={errors?.avatar} />
             <Button isTrailingIcon={<MdAddCircleOutline />} buttonText='add' location='modal' color='blue' handleNewCustomer={sendErrors} />

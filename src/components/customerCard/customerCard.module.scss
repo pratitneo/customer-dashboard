@@ -54,6 +54,7 @@
     }
 
     &__userName {
+        text-transform: capitalize;
         font-size: 12px;
 
         @media screen and (min-width: 1024px) {
@@ -64,6 +65,7 @@
     &__userLocation {
         font-size: 10px;
         color: $grey-primary;
+        text-transform: capitalize;
 
         @media screen and (min-width: 1024px) {
             font-size: 12px;
@@ -132,6 +134,7 @@
 
     &__company {
         font-size: 10px;
+        text-transform: capitalize;
         text-decoration: underline $grey-primary dotted 1px;
         // color: $grey-primary;
 
