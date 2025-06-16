@@ -53,6 +53,7 @@ export type OverlayType = {
     children?: React.ReactNode
 }
 export type NewCustInpType = {
+    customcls?: string
     label?: string
     inputType?: string
     nameType?: string
@@ -60,12 +61,20 @@ export type NewCustInpType = {
     inputErr?: string
     getInputValidation?: (inputEvent: any) => void
 }
+export type FileSelectType = {
+    customcls?: string
+    label?: string
+    nameType?: string
+    inputErr?: string
+    getInputValidation?: (selectEvent: any) => void
+}
 export type ErrorsType = {
     name: string
     country: string
     mobile: string
     email: string
     company: string
+    avatar?: string
 }
 export type FormDataType = {
     name: string
@@ -74,6 +83,7 @@ export type FormDataType = {
     email: string
     company: string
     status: boolean
+    avatar?: string
 }
 export type NewCustomerType = {
     sendNewCustomer: (customer: ErrorsType) => void

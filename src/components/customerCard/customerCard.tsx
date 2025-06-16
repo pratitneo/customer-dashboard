@@ -14,7 +14,7 @@ const CustomerCard = ({ customersData, updateStatus, getDeleteFn }: CustomerCard
                             {/* photo */}
                             <div className={`${custCardCss['cust-dash__photo']}`}>
                                 <img src={`${customer?.avatar}`} className={`${custCardCss['cust-dash__user-image']}`} />
-                                {customer?.status === 'Active' ? (
+                                {customer?.status ? (
                                     <div className={`${custCardCss['cust-dash__active-dot']}`}></div>
                                 ) : ''}
                             </div>

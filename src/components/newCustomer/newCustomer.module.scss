@@ -4,6 +4,8 @@
     &__modal {
         width: 100%;
         max-width: 500px;
+        height: 100%;
+        max-height: 500px;
         margin: 0 20px;
         padding: 20px;
         display: flex;
@@ -11,6 +13,7 @@
         gap: 20px;
         border-radius: $radius-primary;
         background-color: $white;
+        overflow: hidden auto;
     }
 
     &__newCustHead {

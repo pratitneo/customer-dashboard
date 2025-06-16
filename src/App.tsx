@@ -18,8 +18,8 @@ function App() {
   const [_loading, setLoading] = useState(true)
   const [_error, setError] = useState<null | string>(null)
   const [modal, setModal] = useState(false)
-  console.log(filteredCustomers, 'filteredCustomers')
 
+  // fetch data from api
   useEffect(() => {
     const getLocalData = localStorage.getItem('customers')
     if (getLocalData) {
@@ -46,12 +46,14 @@ function App() {
     }
   }, [])
 
+  // set customers to filtered customers
   useEffect(() => {
     if (customers) {
       setFilteredCustomers(customers);
     }
   }, [customers]);
 
+  // set data to local storage
   useEffect(() => {
     if (filteredCustomers?.customers && filteredCustomers.customers.length > 0) {
       localStorage.setItem('customers', JSON.stringify(filteredCustomers));
